@@ -1,0 +1,25 @@
+- definition:
+    query:
+      collection_name: allowed-queries
+      query_name: Counties
+  url: counties
+  methods:
+  - GET
+  name: Counties
+  comment: |-
+    All counties can be accessed via these methods.
+
+    A regular expression can be specified with the `name` parameter.
+    A regular expression can be specified with the `state` parameter.
+- definition:
+    query:
+      collection_name: allowed-queries
+      query_name: States
+  url: states
+  methods:
+  - GET
+  name: States
+  comment: |-
+    All states can be accessed via these methods.
+
+    A regular expression can be specified with the `name` parameter.

@@ -1,0 +1,23 @@
+- name: allowed-queries
+  definition:
+    queries:
+    - name: Counties
+      query: |-
+        query Counties($name: String = "", $state: String = "") {
+          counties(where: {name: {_iregex: $name}, state: {name: {_iregex: $state}}}) {
+            name
+            code
+            state {
+              code
+              name
+            }
+          }
+        }
+    - name: States
+      query: |-
+        query States ($name:String= "") {
+          states(where: {name: {_iregex: $name}}) {
+            name
+            code
+          }
+        }

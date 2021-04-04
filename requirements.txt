@@ -1,0 +1,4 @@
+aiohttp
+gql
+postgres
+sqlalchemy

@@ -1,0 +1,43 @@
+- table:
+    schema: public
+    name: counties
+  object_relationships:
+  - name: state
+    using:
+      foreign_key_constraint_on: state_code
+  array_relationships:
+  - name: datasets
+    using:
+      foreign_key_constraint_on:
+        column: county_code
+        table:
+          schema: public
+          name: datasets
+- table:
+    schema: public
+    name: datasets
+  object_relationships:
+  - name: county
+    using:
+      foreign_key_constraint_on: county_code
+  - name: state
+    using:
+      foreign_key_constraint_on: state_code
+- table:
+    schema: public
+    name: states
+  array_relationships:
+  - name: counties
+    using:
+      foreign_key_constraint_on:
+        column: state_code
+        table:
+          schema: public
+          name: counties
+  - name: datasets
+    using:
+      foreign_key_constraint_on:
+        column: state_code
+        table:
+          schema: public
+          name: datasets
